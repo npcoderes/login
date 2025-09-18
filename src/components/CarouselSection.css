@@ -33,3 +33,8 @@
   transform: scale(1.1) !important;
   border: 2px solid #ffffff !important;
 }
+
+
+:where(.css-dev-only-do-not-override-1v28nim).ant-carousel .slick-list{
+  top: -50px;
+}
