@@ -35,6 +35,8 @@ const LoginSection = memo(() => {
     <div className="login-section">
       {/* login bg */}
       <div className="loginframe">
+        {/* loginsideimg */}
+        <img src={loginbg} alt="Login Background" className="login-frame-img" />
         <Card className="login-card" style={cardStyles}>
           <div className="login-header">
             <img
