@@ -1,0 +1,449 @@
+/* Login Section Styles */
+.login-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 100%;
+}
+
+.login-card {
+  width: 100%;
+  position: relative;
+  height: auto;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.login-text {
+  color: #8c98a9;
+}
+
+/* Logo Styling */
+.logo {
+  width: 100%;
+  height: 5vh;
+  max-width: 12.5vw;
+  object-fit: contain;
+}
+
+/* Login Header */
+.login-header {
+  text-align: center;
+  /* margin-bottom: 2rem; */
+}
+
+.login-header h1 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.login-header p {
+  color: #0f0f0f;
+  font-size: 1.7rem;
+  padding: 10px 0px;
+  margin: 0 !important;
+}
+
+/* Form Input Styling */
+.login-input {
+  height: 4.8vh;
+  border-radius: 0.5vw;
+}
+
+/* Form Label with Icon Styling */
+.form-label-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.label-icon {
+  color: #ff8214;
+  font-size: 16px;
+}
+
+.antd-checkbox-wrapper {
+  color: #96550a;
+}
+
+/* Form Item Spacing - Reduced gaps */
+.login-card .ant-form-item {
+  margin-bottom: 8px !important;
+}
+
+.login-card .ant-form-item:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Form Label Spacing */
+.ant-form-item-label {
+  padding-bottom: 2px !important;
+}
+
+/* Prevent content overflow */
+.login-card {
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.login-button {
+  height: 4.8vh;
+  border-radius: 0.5vw;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Login Footer */
+.login-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.login-footer a {
+  color: #1890ff;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+.login-footer span {
+  display: block;
+  margin-top: 0.5rem;
+  color: #666;
+}
+
+/* Store Icons Styling */
+.store-icons {
+  border: 1px solid #dedbdb;
+  padding: 0 12px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+
+.store-icons span {
+  font-size: 16px;
+  color: #8c98a9;
+}
+
+.store-icons img {
+  max-width: 100px;
+  height: 5vh;
+  border-radius: 0px !important;
+  object-fit: contain;
+}
+
+.ant-card {
+  padding: 30px !important;
+}
+
+/* Form Validation and Custom Styling */
+:where(.css-dev-only-do-not-override-1v28nim).login-input-prefix-item {
+  margin-bottom: 10px !important;
+}
+
+/* Ant Design Custom Styling */
+.ant-checkbox .ant-checkbox-inner {
+  border-color: #ff8214 !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #ff8214 !important;
+  border-color: #ff8214 !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner::after {
+  border-color: white !important;
+}
+
+.ant-input:focus,
+.ant-input-outlined:focus,
+.ant-input-outlined:hover {
+  border-color: #ff8214 !important;
+}
+
+.ant-divider-horizontal {
+  margin: 15px 0 !important;
+}
+
+.loginSlide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  z-index: -1;
+}
+
+/* Tablet Design - Login specific */
+@media (max-width: 1254px) {
+  .login-section {
+    /* padding: 1.5rem; */
+    overflow: visible;
+  }
+
+  .login-card {
+    /* max-width: 40vw; */
+    padding: 15px !important;
+    height: auto;
+    max-height: 80vh;
+    overflow: visible;
+  }
+
+  .login-card .ant-form-item {
+    margin-bottom: 6px !important;
+  }
+
+  .ant-form-item-label {
+    padding-bottom: 1px !important;
+  }
+
+  .store-icons {
+    padding: 10px 12px;
+    border-radius: 6px;
+  }
+
+  .store-icons span {
+    font-size: 13px;
+  }
+
+  .store-icons img {
+    max-width: 90px;
+    height: 2.8vh;
+  }
+
+  .form-label-with-icon {
+    font-size: 13px;
+  }
+
+  .label-icon {
+    font-size: 15px;
+  }
+}
+
+/* Mobile Design - Login specific */
+@media (max-width: 768px) {
+  .login-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh 1rem;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem 1.5rem;
+    height: auto;
+    margin: 0;
+    border-radius: 15px;
+  }
+
+  .ant-card {
+    padding: 15px !important;
+  }
+
+  .logo {
+    width: 100%;
+    height: 4vh;
+    max-width: 50vw;
+    object-fit: contain;
+  }
+
+  /* .login-header h1 {
+    font-size: 1.5rem;
+  } */
+
+  .login-header p {
+    font-size: 1.5rem;
+    padding: 15px 0px;
+  }
+
+  .login-input {
+    height: 4.4vh;
+    border-radius: 2vw;
+  }
+
+  .login-button {
+    height: 4.4vh;
+    font-size: 15px;
+    border-radius: 2vw;
+  }
+
+  .store-icons {
+    border: 1px solid #dedbdb;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+  }
+
+  .store-icons span {
+    font-size: 13px;
+  }
+
+  .store-icons img {
+    max-width: 85px;
+    height: 2.8vh;
+    object-fit: cover;
+  }
+
+  .form-label-with-icon {
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .label-icon {
+    font-size: 14px;
+  }
+
+  .login-card .ant-form-item {
+    margin-bottom: 8px !important;
+  }
+
+  .ant-form-item-label {
+    padding-bottom: 2px !important;
+  }
+
+  .imageBg {
+    right: 6%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+}
+/* Small Mobile Design - Login specific */
+@media (max-width: 480px) {
+  .login-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 350px;
+    padding: 1.5rem;
+    height: auto;
+    margin: 0;
+    border-radius: 15px;
+  }
+
+  .loginSlide {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .loginSlide img {
+    position: absolute;
+    width: 93%;
+    height: 595px;
+    top: 12.9vh;
+    margin-left: 61px;
+  }
+
+  .ant-card {
+    padding: 12px !important;
+  }
+
+  .logo {
+    width: 100%;
+    height: 3vh;
+    max-width: 60vw;
+    object-fit: contain;
+  }
+
+  .login-header p {
+    margin-top: 5px;
+    font-size: 1.2rem;
+  }
+
+  .login-header {
+    margin-bottom: 1rem;
+  }
+
+  .login-input {
+    height: 5vh;
+    border-radius: 2vw;
+  }
+
+  .login-button {
+    height: 5vh;
+    font-size: 14px;
+    border-radius: 2vw;
+  }
+
+  .login-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .login-footer {
+    margin-top: 1rem;
+  }
+
+  .login-footer span {
+    font-size: 0.85rem;
+  }
+
+  .store-icons {
+    padding: 10px 10px;
+    border-radius: 5px;
+  }
+
+  .store-icons span {
+    font-size: 12px;
+  }
+
+  .store-icons img {
+    max-width: 80px !important;
+    height: 3.2vh !important;
+    border-radius: 0px !important;
+    object-fit: cover;
+  }
+
+  /* Small mobile form spacing */
+  .login-card .ant-form-item {
+    margin-bottom: 6px !important;
+  }
+
+  .ant-form-item-label {
+    padding-bottom: 1px !important;
+  }
+
+  .ant-btn {
+    padding: 0px 20px !important;
+  }
+
+  .login-header p {
+    padding: 5px 0px 5px 0px !important;
+    margin: 0 !important;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 400) {
+  .loginSlide img {
+    position: absolute;
+    width: 101%;
+    height: 610px;
+    top: 29px;
+    margin-left: 37px;
+  }
+}

@@ -1,0 +1,35 @@
+.ant-carousel {
+  display: flex !important;
+  justify-content: end !important;
+  align-items: center !important;
+}
+
+.carousel-image {
+  max-width: 100% !important;
+  object-fit: contain !important;
+}
+
+
+.ant-carousel .slick-dots li {
+  width: 10px;
+  height: 5px !important;
+}
+
+.ant-carousel .slick-dots li button {
+  height: 30px !important;
+  background-color: #ff8214;
+}
+
+.ant-carousel .slick-dots li::after {
+  height: 10px !important;
+}
+
+.slick-dots li.slick-active::after {
+  background-color: #ff8214 !important;
+}
+
+.my-carousel .ant-carousel .slick-dots li button:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  transform: scale(1.1) !important;
+  border: 2px solid #ffffff !important;
+}
