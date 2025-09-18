@@ -22,6 +22,9 @@
   z-index: -12;
 }
 
+.ant-card{
+  background-color: white !important;
+}
 .login-card {
   width: 100%;
   position: relative;
