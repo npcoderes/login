@@ -1,19 +1,18 @@
 import React, { memo } from "react";
 import { Carousel } from "antd";
-import img1 from "../assets/image.png";
-import img2 from "../assets/image2.png";
-import img3 from "../assets/3.png";
-import img4 from "../assets/4.png";
-import img5 from "../assets/5.png";
-import "./CarouselSection.css";
+import img1 from "../assets/image.webp";
+import img2 from "../assets/image2.webp";
+import img3 from "../assets/3.webp";
+import img4 from "../assets/4.webp";
+import img5 from "../assets/5.webp";
+import "./CarouselSection.less";
 import { useMemo } from "react";
 
 const CarouselSection = memo(() => {
-  const backgroundImages = useMemo(() => [img1, img2, img3, img4, img5], []);
+  const backgroundImages = [img1, img2, img3, img4, img5];
 
   const config = useMemo(
     () => ({
-      delay: 3000,
       disableOnInteraction: false,
       pauseOnHover: false,
       pauseOnFocus: false,
@@ -29,6 +28,7 @@ const CarouselSection = memo(() => {
           alt={`Slide ${index + 1}`}
           loading="lazy"
           className="carousel-image"
+
         />
       </div>
     ));
@@ -36,7 +36,7 @@ const CarouselSection = memo(() => {
 
 
   return (
-    <Carousel autoplay={true} autoplaySpeed={5000} style={{ width: 'clamp(300px, 50vw, 930px)' }}>
+    <Carousel autoplay={{dotDuration:true}} {...config} autoplaySpeed={5000} style={{ width: 'clamp(400px,1200px,980px' }}  className="my-carousel">
        {items}
     </Carousel>
   );

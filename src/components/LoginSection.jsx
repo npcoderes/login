@@ -5,26 +5,14 @@ import gp from "../assets/GP.svg";
 import loginSide from "../assets/login-side.png";
 import loginbg from "../assets/imagebg.png";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import "./LoginSection.css";
+import { Link } from "react-router-dom";
+// import "./LoginSection.css";
+import './Login.less'
 
-const LoginSection = memo(() => {
+console.log("loginbg", loginbg);
+const LoginSection = memo((props) => {
   const [loading, setLoading] = useState(false);
 
-  const cardStyles = useMemo(
-    () => ({
-      borderRadius: "15px",
-      boxShadow: "0 8px 24px rgba(0, 0, 0, 0.15)",
-    }),
-    []
-  );
-
-  const buttonStyles = useMemo(
-    () => ({
-      backgroundColor: "#ff852e",
-      borderColor: "#ff852e",
-    }),
-    []
-  );
 
   const handleFormSubmit = useCallback((values) => {
     setLoading(true);
@@ -36,129 +24,211 @@ const LoginSection = memo(() => {
       {/* login bg */}
       <div className="loginframe">
         {/* loginsideimg */}
-        <img src={loginbg} alt="Login Background" className="login-frame-img" />
-        <Card className="login-card" style={cardStyles}>
-          <div className="login-header">
-            <img
-              src="https://customer.terotam.com/static/media/terotam-bg.ec7e508214810c6c9934.png"
-              alt="Terotam Logo"
-              className="logo"
-            />
-            <p className="login-text">Log in to your Account</p>
+        <img src={loginbg} alt="Login Background" className="login-frame-img" loading="lazy" />
+        <div  className="login-content">
+                  <div className="login-container">
+          <div className="image-title-container">
+            <div className="container">
+              <img
+                src={
+                  // ["light", "blue"].includes(user.themeName)
+                  //   ? userSetting.bg_logo_url
+                  //   : userSetting.dark_bg_logo_url
+                  "https://customer.terotam.com/static/media/terotam-bg.4f2b0f70c3cfac5a8ea4.webp"
+                }
+                alt="logo"
+                className="logo"
+              />
+            </div>
+            <h2 className="title">
+              {/* {formatMessage({ id: "LogintoyourAccount" })} */}
+              Login to your Account
+            </h2>
           </div>
 
           <Form
-            name="login"
-            autoComplete="off"
-            size="large"
-            onFinish={handleFormSubmit}
+            layout="vertical"
+            className="login-form"
+            style={{ marginTop: "35px" }}
+            initialValues={{
+              remember: localStorage.getItem("rememberMe") || false,
+            }}
+          // onSubmit={(e) => props.user.handleLoginSubmit(e, props.form, props.history)}
+          // onFinish={(values) => {
+          //   console.log(values);
+          //   props.user.handleLoginSubmit(values, props.history);
+          // }}
           >
             <Form.Item
-              layout="vertical"
-              name="username"
+              required={false}
               label={
-                <span className="form-label-with-icon">
-                  <UserOutlined className="label-icon" />
-                  <span className="login-text">
-                    {" "}
-                    Email Or Username Or Mobile
-                  </span>
+                <span style={{ color: "#FF6300" }}>
+                  {/* <UserInputIcon
+                  default_color={
+                    props.globals2.themeActiveObj["@primary-color"] || "#FF6300"
+                  }
+                />
+                {formatMessage({ id: "EmailOrUsernameOrMobile" })} */}
+                  Email or Username or Mobile
                 </span>
               }
-              prefixCls="login-input-prefix"
+              name="username"
               rules={[
                 {
                   required: true,
-                  message: "Please input your username!",
+                  whitespace: true,
+                  // message: formatMessage({ id: "Enteremailorusernameormobile" }),
+                  message: "Enter email or username or mobile",
                 },
+                ({ getFieldValue }) => ({
+                  validator: (rule, value, callback) => {
+                    if (value && value.includes("'")) {
+                      return Promise.reject(
+                        new Error("Enter valid email or username or mobile")
+                      );
+                      // callback("Enter valid email or username or mobile");
+                    } else {
+                      return Promise.resolve();
+                    }
+                  },
+                }),
               ]}
             >
               <Input
-                placeholder=" Email Or Username Or Mobile"
-                className="login-input"
+                size="large"
+                // placeholder={formatMessage({
+                //   id: "Enteremailorusernameormobile",
+                // })}
+                placeholder="Enter email or username or mobile"
+                // inputType="string"
               />
             </Form.Item>
-
             <Form.Item
-              layout="vertical"
-              name="password"
+              required={false}
               label={
-                <span className="form-label-with-icon">
-                  <LockOutlined className="label-icon" />
-                  <span className="login-text"> Password</span>
+                <span>
+                  <span style={{ marginTop: "10px" }}>
+                    {/* <KeyInputIcon
+                      default_color={
+                        props.globals2.themeActiveObj["@primary-color"] ||
+                        "#FF6300"
+                      }
+                    /> */}
+                  </span>{" "}
+                  {/* {formatMessage({ id: "Password" })} */}
+                  Password
                 </span>
               }
+              style={{ marginBottom: "10px" }}
+              name="password"
               rules={[
                 {
                   required: true,
-                  message: "Please input your password!",
+                  whitespace: true,
+                  // message: formatMessage({ id: "Pleaseenteryourpassword" }),
+                  message: "Please enter your password",
                 },
               ]}
             >
-              <Input.Password placeholder="Password" className="login-input" />
+              <Input.Password
+                size="large"
+                type="password"
+                // placeholder={formatMessage({ id: "Password" })}
+                placeholder="Password"
+              />
             </Form.Item>
-
-            <Flex
-              justify="space-between"
-              align="center"
-              style={{ marginBottom: "16px" }}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
             >
-              <Form.Item>
-                <Checkbox className="login-text">Remember me</Checkbox>
-              </Form.Item>
-
-              <Form.Item>
-                <Button
-                  type="primary"
-                  color="#FF8214"
-                  style={buttonStyles}
-                  htmlType="submit"
-                  //   className="login-button"
-                  loading={loading}
-                  block
+              <div
+                style={{ float: "left", lineHeight: "60px", color: "#252525" }}
+              >
+                <Form.Item
+                  style={{ paddingBottom: "0px" }}
+                  name="remember"
+                  valuePropName="checked"
+                  label={null}
                 >
-                  <span style={{ color: "#fff" }}>LOGIN</span>
+                  {/* <Checkbox>{formatMessage({ id: "Rememberme" })}</Checkbox> */}
+                  <Checkbox>Remember me</Checkbox>
+                </Form.Item>
+              </div>
+              <Form.Item style={{ paddingBottom: "0px" }} label={null}>
+                <Button
+                  // loading={
+                  //   props.user.isBtnLoading || props.globals.reloadLoginButton
+                  // }
+                  disabled={props.disabled}
+                  type="primary"
+                  htmlType="submit"
+                  style={{ float: "right", margin: "10px 0", minWidth: "130px" ,backgroundColor:"#FB6506"}}
+                  size="large"
+                >
+                  {/* {formatMessage({ id: "LOGIN" })} */}
+                  LOG IN
                 </Button>
               </Form.Item>
-            </Flex>
+            </div>
+            <div className="signup-forget-style">
+              <Form.Item>
+                <Link
+                  to="/user/forgot-password"
+                  style={{
+                    float: "left",
+                    textDecoration: "Underline",
+                    color:
+                      // props.globals2.themeActiveObj["@primary-color"] ||
+                      "#FF6300",
+                  }}
+                >
+                  {/* {formatMessage({ id: "ForgotPassword" })} */}
+                  Forgot Password?
+                </Link>
+              </Form.Item>
+              <Form.Item>
+                <Link
+                  to="/user/signup"
+                  style={{
+                    textDecoration: "Underline",
+                    color:
+                      // props.globals2.themeActiveObj["@primary-color"] ||
+                      "#FF6300",
+                  }}
+                >
+                  {/* {formatMessage({ id: "SignUp" })} */}
+                  Sign Up
+                </Link>
+              </Form.Item>
+            </div>
           </Form>
-          <Divider />
-          <Flex justify="space-between" align="center" dir="row">
-            <div>
+          {/* {process.env.REACT_APP_AIRTEL === "true" ? (
+            ""
+          ) : ( */}
+            <div className="social-media">
+              <p>Available on</p>
               <a
-                href="#forgot"
-                style={{ color: "#ff852e", textDecoration: "underline" }}
+                href="https://play.google.com/store/apps/details?id=com.terotam.customer"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                Forgot password?
+                <img alt="playstore" src={gp} loading="lazy" />
+              </a>
+              <a
+                href="https://apps.apple.com/in/app/terotam-customer/id1475752631"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img alt="appstore" src={ap} loading="lazy" />
               </a>
             </div>
-            <div>
-              <a
-                href="#signup"
-                style={{ color: "#ff852e", textDecoration: "underline" }}
-              >
-                Sign up
-              </a>
-            </div>
-          </Flex>
+          {/* )} */}
+        </div>
+        </div>
 
-          {/* play store app store icon  */}
-
-          <Flex
-            dir="row"
-            justify="space-between"
-            align="center"
-            // style={{ marginTop: "20px" }}
-            className="store-icons"
-          >
-            <span> Available on</span>
-
-            <div style={{ display: "flex", gap: "10px" }}>
-              <img src={gp} alt="Google Play" />
-              <img src={ap} alt="App Store" />
-            </div>
-          </Flex>
-        </Card>
       </div>
     </div>
   );

@@ -1,0 +1,154 @@
+@primary-color: #ff8214;
+@white-color: #ffffff;
+@dot-width: 10px;
+@dot-height: 5px;
+@button-height: 30px;
+@after-height: 10px;
+@top-offset: 0px;
+@hover-scale: 1.1;
+@border-width: 2px;
+
+
+
+.ant-carousel {
+  display: flex !important;
+  justify-content: end !important;
+  align-items: center !important;
+
+
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+
+  .slick-list {
+    top: @top-offset;
+  }
+
+
+  .slick-dots {
+    li {
+      width: @dot-width;
+      height: @dot-height !important;
+
+
+      button {
+        height: @button-height !important;
+        background-color: @primary-color;
+      }
+
+
+      &::after {
+        height: @after-height !important;
+      }
+
+
+      &.slick-active {
+        &::after {
+          background-color: @primary-color !important;
+        }
+      }
+    }
+  }
+}
+
+
+.carousel-image {
+  width: 100% !important;
+  object-fit: fill !important;
+  // aspect-ratio: 16 / 9 !important;
+  max-height: 650px !important;
+  height: auto;
+}
+
+// .slick-slide{
+// width: 1100px !important;
+// }
+
+
+@media (max-width:1550px){
+  .my-carousel{
+    width: calc(600px) !important;
+
+  }
+
+  .carousel-image{
+    max-height: 500px !important;
+  }
+}
+
+
+
+
+.my-carousel {
+  .ant-carousel {
+    .slick-dots {
+      li {
+        button {
+          &:hover {
+            background: rgba(255, 255, 255, 0.9) !important;
+            transform: scale(@hover-scale) !important;
+            border: @border-width solid @white-color !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+:where(.css-dev-only-do-not-override-1v28nim) {
+  &.ant-carousel {
+    .slick-list {
+      top: @top-offset;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .ant-carousel {
+    display: none !important;
+
+    .slick-dots {
+      li {
+        width: 8px;
+        height: 4px !important;
+
+        button {
+          height: 25px !important;
+        }
+
+        &::after {
+          height: 8px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .ant-carousel {
+    justify-content: center !important;
+
+    .slick-dots {
+      li {
+        width: 6px;
+        height: 3px !important;
+
+        button {
+          height: 20px !important;
+        }
+
+        &::after {
+          height: 6px !important;
+        }
+      }
+    }
+  }
+
+  .carousel-image {
+    max-height: 300px !important;
+  }
+}

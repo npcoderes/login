@@ -1,13 +1,17 @@
 import React from "react";
-import LoginSection from "./components/LoginSection";
-import CarouselSection from "./components/CarouselSection";
+import { Suspense } from "react";
+import { lazy } from "react";
 import "./App.css";
 
+const LazyLoginSection = lazy(() => import("./components/LoginSection"));
+const LazyCarouselSection = lazy(() => import("./components/CarouselSection"));
 const App = () => {
   return (
     <div className="app">
-      <CarouselSection />
-      <LoginSection />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyCarouselSection />
+        <LazyLoginSection />
+      </Suspense>
     </div>
   );
 };

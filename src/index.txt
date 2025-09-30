@@ -1,0 +1,238 @@
+import React, { useEffect } from "react";
+import { inject } from "mobx-react";
+import { observer } from "mobx-react-lite";
+import "@ant-design/compatible/assets/index.css";
+import { Checkbox, Form } from "antd";
+import { withRouter } from "react-router";
+// import { Link } from "react-router-dom";
+// import CenterBox from "globals/components/centerBox";
+// import Input from "globals/components/input";
+// import Button from "globals/components/button";
+// import userSetting from "utils/defaultSettings";
+// import UserInputIcon from "assets/images/userInput";
+// import KeyInputIcon from "assets/images/keyIcon";
+// import playstore from "../../../assets/images/playstore.webp";
+// import appstore from "../../../assets/images/appstore.webp";
+import "./Login.less";
+
+const LoginPage = (props) => {
+  const {
+    intl: { formatMessage },
+    user,
+  } = props;
+  useEffect(() => {
+    props.routes.history.index = 0;
+  }, [props.routes.history]);
+  // useEffect(() => {
+  //   if (user.themeName === "dark") {
+  //     document.body.classList.remove("blue");
+  //     document.body.classList.add("dark");
+  //   } else if (user.themeName === "blue") {
+  //     document.body.classList.remove("dark");
+  //     document.body.classList.add("blue");
+  //   } else {
+  //     document.body.classList.remove("dark", "blue");
+  //   }
+  // }, [user.themeName]);
+
+  return (
+    <CenterBox>
+      <div className="login-container">
+        <div className="image-title-container">
+          <div className="container">
+            <img
+              src={
+                ["light", "blue"].includes(user.themeName)
+                  ? userSetting.bg_logo_url
+                  : userSetting.dark_bg_logo_url
+              }
+              alt="logo"
+              className="logo"
+            />
+          </div>
+          <h2 className="title">
+            {formatMessage({ id: "LogintoyourAccount" })}
+          </h2>
+        </div>
+
+        <Form
+          layout="vertical"
+          className="login-form"
+          style={{ marginTop: "35px" }}
+          initialValues={{
+            remember: localStorage.getItem("rememberMe") || false,
+          }}
+          // onSubmit={(e) => props.user.handleLoginSubmit(e, props.form, props.history)}
+          onFinish={(values) => {
+            console.log(values);
+            props.user.handleLoginSubmit(values, props.history);
+          }}
+        >
+          <Form.Item
+            required={false}
+            label={
+              <span>
+                <UserInputIcon
+                  default_color={
+                    props.globals2.themeActiveObj["@primary-color"] || "#FF6300"
+                  }
+                />
+                {formatMessage({ id: "EmailOrUsernameOrMobile" })}
+              </span>
+            }
+            name="username"
+            rules={[
+              {
+                required: true,
+                whitespace: true,
+                message: formatMessage({ id: "Enteremailorusernameormobile" }),
+              },
+              ({ getFieldValue }) => ({
+                validator: (rule, value, callback) => {
+                  if (value && value.includes("'")) {
+                    return Promise.reject(
+                      new Error("Enter valid email or username or mobile")
+                    );
+                    // callback("Enter valid email or username or mobile");
+                  } else {
+                    return Promise.resolve();
+                  }
+                },
+              }),
+            ]}
+          >
+            <Input
+              size="large"
+              placeholder={formatMessage({
+                id: "Enteremailorusernameormobile",
+              })}
+              inputType="string"
+            />
+          </Form.Item>
+          <Form.Item
+            required={false}
+            label={
+              <span>
+                <span style={{ marginTop: "10px" }}>
+                  <KeyInputIcon
+                    default_color={
+                      props.globals2.themeActiveObj["@primary-color"] ||
+                      "#FF6300"
+                    }
+                  />
+                </span>{" "}
+                {formatMessage({ id: "Password" })}
+              </span>
+            }
+            style={{ marginBottom: "10px" }}
+            name="password"
+            rules={[
+              {
+                required: true,
+                whitespace: true,
+                message: formatMessage({ id: "Pleaseenteryourpassword" }),
+              },
+            ]}
+          >
+            <Input.Password
+              size="large"
+              type="password"
+              placeholder={formatMessage({ id: "Password" })}
+            />
+          </Form.Item>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{ float: "left", lineHeight: "60px", color: "#252525" }}
+            >
+              <Form.Item
+                style={{ paddingBottom: "0px" }}
+                name="remember"
+                valuePropName="checked"
+                label={null}
+              >
+                <Checkbox>{formatMessage({ id: "Rememberme" })}</Checkbox>
+              </Form.Item>
+            </div>
+            <Form.Item style={{ paddingBottom: "0px" }} label={null}>
+              <Button
+                loading={
+                  props.user.isBtnLoading || props.globals.reloadLoginButton
+                }
+                disabled={props.disabled}
+                type="primary"
+                htmlType="submit"
+                style={{ float: "right", margin: "10px 0", minWidth: "130px" }}
+                size="large"
+              >
+                {formatMessage({ id: "LOGIN" })}
+              </Button>
+            </Form.Item>
+          </div>
+          <div className="signup-forget-style">
+            <Form.Item>
+              <Link
+                to="/user/forgot-password"
+                style={{
+                  float: "left",
+                  textDecoration: "Underline",
+                  color:
+                    props.globals2.themeActiveObj["@primary-color"] ||
+                    "#FF6300",
+                }}
+              >
+                {formatMessage({ id: "ForgotPassword" })}
+              </Link>
+            </Form.Item>
+            <Form.Item>
+              <Link
+                to="/user/signup"
+                style={{
+                  textDecoration: "Underline",
+                  color:
+                    props.globals2.themeActiveObj["@primary-color"] ||
+                    "#FF6300",
+                }}
+              >
+                {formatMessage({ id: "SignUp" })}
+              </Link>
+            </Form.Item>
+          </div>
+        </Form>
+        {process.env.REACT_APP_AIRTEL === "true" ? (
+          ""
+        ) : (
+          <div className="social-media">
+            <p>Available on</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.terotam.customer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <img alt="playstore" src={playstore} loading="lazy" />
+            </a>
+            <a
+              href="https://apps.apple.com/in/app/terotam-customer/id1475752631"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <img alt="appstore" src={appstore} loading="lazy" />
+            </a>
+          </div>
+        )}
+      </div>
+    </CenterBox>
+  );
+};
+
+// export default withRouter(
+//   inject("globals", "user", "routes", "globals2")(observer(LoginPage))
+// );
+
+
+export default LoginPage

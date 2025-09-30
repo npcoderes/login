@@ -9,7 +9,6 @@
   object-fit: contain !important;
 }
 
-
 .ant-carousel .slick-dots li {
   width: 10px;
   height: 5px !important;
@@ -34,7 +33,11 @@
   border: 2px solid #ffffff !important;
 }
 
-
-:where(.css-dev-only-do-not-override-1v28nim).ant-carousel .slick-list{
+:where(.css-dev-only-do-not-override-1v28nim).ant-carousel .slick-list {
   top: -50px;
+}
+
+.ant-carousel:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
