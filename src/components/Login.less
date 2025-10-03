@@ -44,7 +44,40 @@
     }
 
 
-    @media (max-width: 768px) {
+
+
+
+    @media (max-width:1320px) {
+        .loginframe {
+            background-size: 70% 615px;
+        }
+    }
+
+
+    @media (max-width: 1440px) {
+        // width: clamp(280px, 85vw, 420px);
+
+        .loginframe {
+            background-size: 70% 610px !important;
+
+            .login-frame-img {
+                right: -40px !important;
+            }
+
+            .login-content {
+                max-width: 420px;
+                padding: 20px 28px;
+
+                .login-container .social-media img {
+                    max-width: 100px !important;
+                }
+            }
+
+
+        }
+    }
+
+        @media (max-width: 768px) {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -63,46 +96,20 @@
     @media (max-width: 460px) {
         .loginframe {
             background-size: 90% 590px;
-        }
-
-        .login-frame-img {
-            right: -75px;
-        }
-
-        .login-container .social-media img {
-            max-width: 80px !important;
-        }
-    }
 
 
-    @media (max-width:1320px) {
-        .loginframe {
-            background-size: 70% 615px;
-        }
-    }
-
-
-    @media (max-width: 1440px) {
-        // width: clamp(280px, 85vw, 420px);
-
-        .loginframe {
-            background-size: 70% 610px !important;
-            
-             .login-frame-img{
-                right: -40px !important;
-             }
-
-            .login-content {
-                max-width: 420px;
-                padding: 20px 28px;
-
-                .login-container .social-media img {
-                    max-width: 100px !important;
-                }
+            .login-frame-img {
+                right: -60px !important;
             }
 
-
+            .login-content {
+                .login-container .social-media img {
+                    max-width: 80px !important;
+                }
+            }
         }
+
+
     }
 
 
