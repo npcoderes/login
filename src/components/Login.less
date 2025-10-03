@@ -11,11 +11,15 @@
     height: 100vh;
     justify-self: self-start;
 
+    *{
+        font-family: @fontFamilyMontserrat;
+    }
+     
     .loginframe {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 670px;
+        height: 700px;
         max-width: 500px;
         width: 100%;
         background: url(../assets//login-side.png) no-repeat;
@@ -32,9 +36,10 @@
 
         .login-content {
             border-radius: 10px;
-            box-shadow: 0 0 30px 0 rgba(0, 0, 0, .18);
+            // box-shadow: 0 0 30px 0 rgba(0, 0, 0, .18);
+             box-shadow: 0px 0px 60px 0px #F5F9FF;
             max-width: 500px;
-            padding: 25px 35px;
+            padding: 35px 35px;
             width: 100%;
             background-color: white;
             z-index: 60;
@@ -77,7 +82,7 @@
         }
     }
 
-        @media (max-width: 768px) {
+    @media (max-width: 768px) {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -160,24 +165,24 @@
         justify-content: center;
     }
 
-    // Media query for desktop screens (1440px and below) - Form adjustments
+
     @media (max-width: 1440px) {
-        max-width: 420px; // Reduced container width
+        max-width: 420px;
 
         .title {
-            margin: 8px 0 16px; // Reduced margins
-            font-size: 1.4rem; // Slightly smaller title
+            margin: 8px 0 16px;
+            font-size: 1.4rem;
         }
 
         .container {
             .logo {
-                max-width: 200px; // Smaller logo
-                margin-bottom: 8px; // Reduced margin
+                max-width: 200px;
+                margin-bottom: 8px;
             }
         }
 
         h2 {
-            font-size: 1.4rem; // Smaller heading
+            font-size: 1.4rem;
         }
     }
 
@@ -205,30 +210,30 @@
             }
         }
 
-        // 1440px media query for form elements
+
         @media (max-width: 1440px) {
-            margin-top: 25px; // Reduced spacing
+            margin-top: 25px;
 
             .ant-form-item {
-                margin-bottom: 12px !important; // Reduced spacing
+                margin-bottom: 12px !important;
             }
 
             .ant-input,
             .ant-input-password {
 
-                font-size: 14px; // Smaller font
+                font-size: 14px;
 
             }
 
             .ant-btn {
-                height: 38px; // Matching button height
-                font-size: 14px; // Smaller font
-                min-width: 110px; // Reduced min-width
-                padding: 0 20px; // Adjusted padding
+                height: 38px;
+                font-size: 14px;
+                min-width: 110px;
+                padding: 0 20px;
             }
 
             .ant-form-item-label {
-                font-size: 13px; // Smaller label font
+                font-size: 13px;
             }
         }
 
@@ -270,17 +275,16 @@
         float: left;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         flex-wrap: wrap;
         border-radius: 10px;
         width: 100%;
-        background: #cccccc17;
-        border: 1px solid #ececec;
 
+       border: 1px solid #E0E7FF;
         img {
-            max-width: 130px !important;
-            width: auto;
+            max-width: 150px !important;
+            width: 150px;
             height: auto;
-            margin: 0 5px;
         }
 
         p {
@@ -288,8 +292,9 @@
             display: inline-block;
             line-height: 50px;
             margin: 0 10px 0 0;
+            font-size: 14px;
             width: auto;
-            font-family: "Montserrat Regular";
+            font-family: @fontFamilyMontserrat;
             color: #888;
         }
     }
@@ -308,4 +313,12 @@
 .dark .login-container .social-media,
 .dark .login-container form.login-form .signup-forget-style {
     border-color: #495057;
+}
+
+.ant-input-affix-wrapper-lg{
+    border-color: #E0E7FF ;
+}
+
+:where(.css-dev-only-do-not-override-1v28nim).ant-input-lg{
+    border-color: #E0E7FF ;
 }
