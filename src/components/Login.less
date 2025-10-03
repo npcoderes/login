@@ -69,31 +69,30 @@
     }
 
 
-    // @media (max-width:400px){
-    //     .loginframe {
-    //         height: 700px;
-    //     }
+    @media (max-width:1320px){
+        .loginframe{
+            background-size: 70% 615px !important;
+        }
+    }
 
-    //     .login-frame-img {
-    //         right: -60px;
-    //     }
-    // }
 
-    // Media query for desktop screens (1440px and below)
     @media (max-width: 1440px) {
-        width: clamp(280px, 85vw, 420px); // Reduced from 500px to 420px
+        width: clamp(280px, 85vw, 420px);
         
         .loginframe {
            
           
-            background-size: 90% 615px; // Slightly smaller background
+            background-size: 90% 615px; 
             
             .login-content {
-                max-width: 420px; // Reduced from 500px
-                padding: 20px 28px; // Reduced from 25px 35px
+                max-width: 420px; 
+                padding: 20px 28px; 
             }
         }
     }
+
+
+
 }
 
 .login-container {
