@@ -14,7 +14,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 710px;
+        height: 700px;
         max-width: 500px;
         width: 100%;
         background: url(../assets//login-side.png) no-repeat;
@@ -78,6 +78,22 @@
     //         right: -60px;
     //     }
     // }
+
+    // Media query for desktop screens (1440px and below)
+    @media (max-width: 1440px) {
+        width: clamp(280px, 85vw, 420px); // Reduced from 500px to 420px
+        
+        .loginframe {
+           
+          
+            background-size: 90% 615px; // Slightly smaller background
+            
+            .login-content {
+                max-width: 420px; // Reduced from 500px
+                padding: 20px 28px; // Reduced from 25px 35px
+            }
+        }
+    }
 }
 
 .login-container {
@@ -123,6 +139,27 @@
         justify-content: center;
     }
 
+    // Media query for desktop screens (1440px and below) - Form adjustments
+    @media (max-width: 1440px) {
+        max-width: 420px; // Reduced container width
+        
+        .title {
+            margin: 8px 0 16px; // Reduced margins
+            font-size: 1.4rem; // Slightly smaller title
+        }
+        
+        .container {
+            .logo {
+                max-width: 200px; // Smaller logo
+                margin-bottom: 8px; // Reduced margin
+            }
+        }
+        
+        h2 {
+            font-size: 1.4rem; // Smaller heading
+        }
+    }
+
     span.portal {
         text-align: center;
         width: 100%;
@@ -144,6 +181,33 @@
                         }
                     }
                 }
+            }
+        }
+
+        // 1440px media query for form elements
+        @media (max-width: 1440px) {
+            margin-top: 25px; // Reduced spacing
+            
+            .ant-form-item {
+                margin-bottom: 12px !important; // Reduced spacing
+            }
+            
+            .ant-input,
+            .ant-input-password {
+                
+                font-size: 14px; // Smaller font
+               
+            }
+            
+            .ant-btn {
+                height: 38px; // Matching button height
+                font-size: 14px; // Smaller font
+                min-width: 110px; // Reduced min-width
+                padding: 0 20px; // Adjusted padding
+            }
+            
+            .ant-form-item-label {
+                font-size: 13px; // Smaller label font
             }
         }
 
@@ -205,6 +269,20 @@
             width: auto;
             font-family: "Montserrat Regular";
             color: #888;
+        }
+
+        // 1440px media query for social media section
+        @media (max-width: 1440px) {
+            padding: 8px; // Reduced padding
+            
+            img {
+                max-width: 60px !important; // Smaller app store icons
+            }
+            
+            p {
+                font-size: 13px; // Smaller text
+                line-height: 40px; // Adjusted line height
+            }
         }
     }
 

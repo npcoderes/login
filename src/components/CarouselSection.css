@@ -1,7 +1,7 @@
 .ant-carousel {
-  display: flex !important;
-  justify-content: end !important;
-  align-items: center !important;
+  display: flex ;
+  justify-content: end ;
+  align-items: center ;
 }
 
 .carousel-image {
