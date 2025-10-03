@@ -106,7 +106,7 @@ const LoginSection = memo((props) => {
             <Form.Item
               required={false}
               label={
-                <span>
+                <span style={{ color: "#FF6300" }}>
                   <span style={{ marginTop: "10px" }}>
                     {/* <KeyInputIcon
                       default_color={

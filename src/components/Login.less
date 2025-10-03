@@ -1,5 +1,6 @@
 // @import "../../../utils/styles/mixins.less";
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+@fontFamilyMontserrat: 'Montserrat', sans-serif;
 
 .login-section {
     position: relative;
@@ -14,7 +15,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 700px;
+        height: 670px;
         max-width: 500px;
         width: 100%;
         background: url(../assets//login-side.png) no-repeat;
@@ -24,7 +25,7 @@
 
         .login-frame-img {
             position: absolute;
-            z-index: -55;
+            z-index: 55;
             top: 45%;
             right: -100px;
         }
@@ -36,6 +37,7 @@
             padding: 25px 35px;
             width: 100%;
             background-color: white;
+            z-index: 60;
 
 
         }
@@ -60,34 +62,46 @@
 
     @media (max-width: 460px) {
         .loginframe {
-           background-size: 300px 700px;
+            background-size: 90% 590px;
         }
 
         .login-frame-img {
             right: -75px;
         }
+
+        .login-container .social-media img {
+            max-width: 80px !important;
+        }
     }
 
 
-    @media (max-width:1320px){
-        .loginframe{
-            background-size: 70% 615px !important;
+    @media (max-width:1320px) {
+        .loginframe {
+            background-size: 70% 615px;
         }
     }
 
 
     @media (max-width: 1440px) {
-        width: clamp(280px, 85vw, 420px);
-        
+        // width: clamp(280px, 85vw, 420px);
+
         .loginframe {
-           
-          
-            background-size: 90% 615px; 
+            background-size: 70% 610px !important;
             
+             .login-frame-img{
+                right: -40px !important;
+             }
+
             .login-content {
-                max-width: 420px; 
-                padding: 20px 28px; 
+                max-width: 420px;
+                padding: 20px 28px;
+
+                .login-container .social-media img {
+                    max-width: 100px !important;
+                }
             }
+
+
         }
     }
 
@@ -103,8 +117,9 @@
 
 
     .title {
-        font-family: "Montserrat Regular";
+        font-family: @fontFamilyMontserrat;
         margin: 10px 0 20px;
+        font-weight: 500;
         text-align: center;
     }
 
@@ -141,19 +156,19 @@
     // Media query for desktop screens (1440px and below) - Form adjustments
     @media (max-width: 1440px) {
         max-width: 420px; // Reduced container width
-        
+
         .title {
             margin: 8px 0 16px; // Reduced margins
             font-size: 1.4rem; // Slightly smaller title
         }
-        
+
         .container {
             .logo {
                 max-width: 200px; // Smaller logo
                 margin-bottom: 8px; // Reduced margin
             }
         }
-        
+
         h2 {
             font-size: 1.4rem; // Smaller heading
         }
@@ -186,25 +201,25 @@
         // 1440px media query for form elements
         @media (max-width: 1440px) {
             margin-top: 25px; // Reduced spacing
-            
+
             .ant-form-item {
                 margin-bottom: 12px !important; // Reduced spacing
             }
-            
+
             .ant-input,
             .ant-input-password {
-                
+
                 font-size: 14px; // Smaller font
-               
+
             }
-            
+
             .ant-btn {
                 height: 38px; // Matching button height
                 font-size: 14px; // Smaller font
                 min-width: 110px; // Reduced min-width
                 padding: 0 20px; // Adjusted padding
             }
-            
+
             .ant-form-item-label {
                 font-size: 13px; // Smaller label font
             }
@@ -218,6 +233,7 @@
             .ant-form-item {
                 margin-bottom: 12px !important;
             }
+
             /* background: #cccccc17; */
             .ant-legacy-form-item {
                 padding-bottom: 0px;
@@ -254,7 +270,7 @@
         border: 1px solid #ececec;
 
         img {
-            max-width: 70px !important;
+            max-width: 130px !important;
             width: auto;
             height: auto;
             margin: 0 5px;
@@ -268,20 +284,6 @@
             width: auto;
             font-family: "Montserrat Regular";
             color: #888;
-        }
-
-        // 1440px media query for social media section
-        @media (max-width: 1440px) {
-            padding: 8px; // Reduced padding
-            
-            img {
-                max-width: 60px !important; // Smaller app store icons
-            }
-            
-            p {
-                font-size: 13px; // Smaller text
-                line-height: 40px; // Adjusted line height
-            }
         }
     }
 
