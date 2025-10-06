@@ -6,7 +6,7 @@ import img3 from "../assets/3.webp";
 import img4 from "../assets/4.webp";
 import img5 from "../assets/5.webp";
 import img6 from "../assets/1-Login.svg"
-import img7 from "../assets/2-Login.svg"
+import img7 from "../assets/2-login.svg"
 import "./CarouselSection.less";
 import { useMemo } from "react";
 
