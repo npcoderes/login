@@ -170,7 +170,7 @@ const LoginSection = memo((props) => {
                   disabled={props.disabled}
                   type="primary"
                   htmlType="submit"
-                  style={{ float: "right", margin: "10px 0", minWidth: "130px" ,backgroundColor:"#FB6506"}}
+                  style={{ float: "right", margin: "10px 0", minWidth: "130px" ,backgroundColor:"#FF8214"}}
                   size="large"
                 >
                   {/* {formatMessage({ id: "LOGIN" })} */}
@@ -187,7 +187,7 @@ const LoginSection = memo((props) => {
                     textDecoration: "Underline",
                     color:
                       // props.globals2.themeActiveObj["@primary-color"] ||
-                      "#FF6300",
+                      "#FF8214",
                       fontSize: "16px"
                   }}
                 >
@@ -202,7 +202,7 @@ const LoginSection = memo((props) => {
                     textDecoration: "Underline",
                     color:
                       // props.globals2.themeActiveObj["@primary-color"] ||
-                      "#FF6300",
+                      "#FF8214",
                     fontSize: "16px"
                   }}
                 >
@@ -217,7 +217,7 @@ const LoginSection = memo((props) => {
           ) : ( */}
             <div className="social-media">
               <p>Available on</p>
-              <div>
+              
                  <a
                 href="https://play.google.com/store/apps/details?id=com.terotam.customer"
                 rel="noopener noreferrer"
@@ -232,7 +232,7 @@ const LoginSection = memo((props) => {
               >
                 <img alt="appstore" src={ap} loading="lazy" />
               </a>
-              </div>
+              
             </div>
           {/* )} */}
         </div>

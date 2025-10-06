@@ -8,8 +8,10 @@
     align-items: center;
     justify-content: center;
     width: clamp(300px, 90vw, 500px);
-    height: 100vh;
+    height: 100dvh;
     justify-self: self-start;
+    // background: blue;
+
 
     *{
         font-family: @fontFamilyMontserrat;
@@ -19,7 +21,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 700px;
+        height: 750px;
         max-width: 500px;
         width: 100%;
         background: url(../assets//login-side.png) no-repeat;
@@ -39,7 +41,7 @@
             // box-shadow: 0 0 30px 0 rgba(0, 0, 0, .18);
              box-shadow: 0px 0px 60px 0px #F5F9FF;
             max-width: 500px;
-            padding: 35px 35px;
+            padding: 60px;
             width: 100%;
             background-color: white;
             z-index: 60;
@@ -226,7 +228,7 @@
 
             .ant-input,
             .ant-input-password {
-
+                color: #14213D;
                 font-size: 14px;
 
             }
@@ -244,7 +246,7 @@
         }
 
         .signup-forget-style {
-            border-top: 1px solid #e4e4e4;
+            border-top: 1px solid #E0E7FF;
             /* border-bottom: 1px solid #e4e4e4; */
             padding: 15px 0;
 
@@ -293,7 +295,7 @@
        }
         img {
             max-width: 150px !important;
-            width: 150px;
+            width: 130px;
             height: 45px;
         }
 
@@ -331,3 +333,12 @@
 :where(.css-dev-only-do-not-override-1v28nim).ant-input-lg{
     border-color: #E0E7FF ;
 }
+
+.ant-input-affix-wrapper .anticon.ant-input-password-icon {
+    color:#8C98A9;
+}
+
+
+// .ant-input::placeholder{
+//     color: #14213D;
+// }
