@@ -38,7 +38,7 @@ const CarouselSection = memo(() => {
 
 
   return (
-    <Carousel autoplay={{dotDuration:true}} {...config} autoplaySpeed={5000} style={{ width: 'clamp(650px,1150px,1150px)' }}  className="my-carousel">
+    <Carousel autoplay={false} {...config} autoplaySpeed={5000} style={{ width: 'clamp(650px,1150px,1150px)' }}  className="my-carousel">
        {items}
     </Carousel>
   );
