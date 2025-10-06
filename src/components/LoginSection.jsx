@@ -63,7 +63,7 @@ const LoginSection = memo((props) => {
             <Form.Item
               required={false}
               label={
-                <span style={{ color: "#8C98A9" ,fontSize:"16px"}}>
+                <span style={{ color: "#8C98A9" ,fontSize:"16px",fontWeight:"500"}}>
                   {/* <UserInputIcon
                   default_color={
                     props.globals2.themeActiveObj["@primary-color"] || "#FF6300"
@@ -71,7 +71,7 @@ const LoginSection = memo((props) => {
                 />
 
                 {formatMessage({ id: "EmailOrUsernameOrMobile" })} */}
-                <img src={user} alt="" style={{width:"18px",height:"18px",marginRight:"5px" }} />
+                <img src={user} alt="" style={{width:"14px",height:"14px",marginRight:"5px" }} />
                   Email or Username or Mobile
                 </span>
               }
@@ -109,7 +109,7 @@ const LoginSection = memo((props) => {
             <Form.Item
               required={false}
               label={
-                <span style={{ color: "#8C98A9", fontSize: "16px" }}>
+                <span style={{ color: "#8C98A9", fontSize: "16px",fontWeight:"500" }}>
                   <span style={{ marginTop: "10px" }}>
                     {/* <KeyInputIcon
                       default_color={
@@ -118,7 +118,7 @@ const LoginSection = memo((props) => {
                       }
                     /> */}
 
-                    <img src={pass} alt=""  style={{width:"18px",height:"18px",marginRight:"5px" ,float:"center",}}/>
+                    <img src={pass} alt=""  style={{width:"14px",height:"14px",marginRight:"5px" ,float:"center",}}/>
                   </span>{" "}
                   {/* {formatMessage({ id: "Password" })} */}
                   Password
@@ -159,7 +159,7 @@ const LoginSection = memo((props) => {
                   label={null}
                 >
                   {/* <Checkbox>{formatMessage({ id: "Rememberme" })}</Checkbox> */}
-                  <Checkbox style={{color:"#8C98A9"}}>Remember me</Checkbox>
+                  <Checkbox style={{color:"#8C98A9",fontWeight:"500"}}>Remember me</Checkbox>
                 </Form.Item>
               </div>
               <Form.Item style={{ paddingBottom: "0px" }} label={null}>
@@ -170,7 +170,7 @@ const LoginSection = memo((props) => {
                   disabled={props.disabled}
                   type="primary"
                   htmlType="submit"
-                  style={{ float: "right", margin: "10px 0", minWidth: "130px" ,backgroundColor:"#FF8214"}}
+                  style={{ float: "right", margin: "10px 0", minWidth: "130px" ,backgroundColor:"#FF8214",fontWeight:"500",fontSize:"16px"}}
                   size="large"
                 >
                   {/* {formatMessage({ id: "LOGIN" })} */}
@@ -188,7 +188,8 @@ const LoginSection = memo((props) => {
                     color:
                       // props.globals2.themeActiveObj["@primary-color"] ||
                       "#FF8214",
-                      fontSize: "16px"
+                      fontSize: "16px",
+                      fontWeight:"500"
                   }}
                 >
                   {/* {formatMessage({ id: "ForgotPassword" })} */}
@@ -203,7 +204,8 @@ const LoginSection = memo((props) => {
                     color:
                       // props.globals2.themeActiveObj["@primary-color"] ||
                       "#FF8214",
-                    fontSize: "16px"
+                    fontSize: "16px",
+                    fontWeight:"500"
                   }}
                 >
                   {/* {formatMessage({ id: "SignUp" })} */}

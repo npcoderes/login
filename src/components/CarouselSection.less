@@ -67,7 +67,7 @@
   width: 100% !important;
   object-fit: cover !important;
   // aspect-ratio: 16 / 9 !important;
-  max-height: 1004px !important;
+  max-height: min(95dvh,1004px) !important;
   height: auto;
   outline: none !important;
 }
@@ -117,8 +117,31 @@
 }
 
 .ant-carousel .slick-dots-bottom {
-  bottom: 120px !important;
+  bottom: 60px !important;
 }
+
+
+@media (max-width: 1680px) {
+  .my-carousel {
+    width: 900px !important;
+  }
+
+  .carousel-image {
+    max-height: 800px !important;
+  }
+}
+
+
+@media (max-width: 1440px) {
+  .my-carousel {
+    width: 850px !important;
+  }
+
+  .carousel-image {
+    max-height: 600px !important;
+  }
+}
+
 
 
 @media (max-width: 1280px) {
@@ -127,7 +150,8 @@
   }
 
   .carousel-image {
-    max-height: 400px !important;
+    object-fit: fill;
+    max-height: 700px !important;
   }
   
 }
