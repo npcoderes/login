@@ -15,7 +15,6 @@ console.log("loginbg", loginbg);
 const LoginSection = memo((props) => {
   const [loading, setLoading] = useState(false);
 
-
   const handleFormSubmit = useCallback((values) => {
     setLoading(true);
     console.log("Login values:", values);
@@ -218,7 +217,8 @@ const LoginSection = memo((props) => {
           ) : ( */}
             <div className="social-media">
               <p>Available on</p>
-              <a
+              <div>
+                 <a
                 href="https://play.google.com/store/apps/details?id=com.terotam.customer"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -232,6 +232,7 @@ const LoginSection = memo((props) => {
               >
                 <img alt="appstore" src={ap} loading="lazy" />
               </a>
+              </div>
             </div>
           {/* )} */}
         </div>
