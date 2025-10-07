@@ -1,17 +1,15 @@
 import React, { memo } from "react";
 import { Carousel } from "antd";
-import img1 from "../assets/image.webp";
-import img2 from "../assets/image2.webp";
-import img3 from "../assets/3.webp";
-import img4 from "../assets/4.webp";
-import img5 from "../assets/5.webp";
-import img6 from "../assets/1-Login.svg"
-import img7 from "../assets/2-login.svg"
+import img1 from "../assets/1-Login-1.svg";
+import img2 from "../assets/1-Login-2.svg";
+import img3 from "../assets/1-Login-3.svg";
+import img4 from "../assets/1-Login-4.svg";
+import img5 from "../assets/1-Login-5.svg";
 import "./CarouselSection.less";
 import { useMemo } from "react";
 
 const CarouselSection = memo(() => {
-  const backgroundImages = [img6,img7];
+  const backgroundImages = [img1, img2, img3, img4, img5];
 
   const config = useMemo(
     () => ({
